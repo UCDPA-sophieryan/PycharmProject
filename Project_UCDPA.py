@@ -215,19 +215,6 @@ print(new_df.head())
 
 #visualising geographical data
 
-import folium
-trinity_col = folium.Map(location = [53.3438, 6.2546], zoom_start = 21)
-trinity_col.save("mymap.html")
-
-for i in range(0,len(new_df)):
-   folium.Marker(
-      location=[new_df.iloc[i]['geometry']],
-      popup=new_df.iloc[i]['uni_name'],
-   ).add_to(trinity_col)
-trinity_col.save("mymap2.html")
-
-
-
 import pandas as pd
 
 irl_uni_only_data = pd.DataFrame({'irish_uni_name' :['Trinity College Dublin', 'Royal College of Surgeons in Ireland (RCSI)','University College Dublin',
